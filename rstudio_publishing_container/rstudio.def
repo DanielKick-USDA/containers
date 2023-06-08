@@ -1,0 +1,10 @@
+Bootstrap: docker
+From: rocker/verse:4.2
+
+%post
+   Rscript -e "install.packages('devtools')"
+   Rscript -e "devtools::install_github('danielkick/datadrivencv')"
+   Rscript -e "install.packages('markdown')"
+   Rscript -e "icons::download_academicons()"
+   Rscript -e "icons::download_fontawesome()"
+   Rscript -e "icons::download_octicons()"
